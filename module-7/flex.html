@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Flexbox Layout</title>
+   </head>
+
+   <style>
+      body {
+         font-family: "Space Grotesk";
+      }
+
+      .container {
+         min-height: 20rem;
+         background-color: violet;
+         padding: 1rem;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+      .box {
+         width: 8rem;
+         height: 8rem;
+         background-color: orange;
+         border-radius: 0.25rem;
+         border: 2px dashed #9e6100;
+         flex-grow: 1;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .box1,
+      .box3 {
+         flex-shrink: 0;
+      }
+   </style>
+
+   <h1>Flexbox Layout</h1>
+   <body>
+      <div class="container">
+         <!-- div.box*3{black box$} -->
+         <div class="box box1">box1</div>
+         <div class="box box2">box2</div>
+         <div class="box box3">box3</div>
+         <!-- <div class="box box4">box4</div>
+         <div class="box box5">box5</div>
+         <div class="box box6">box6</div>
+         <div class="box box7">box7</div>
+         <div class="box box8">box8</div> -->
+      </div>
+   </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Grid Layout</title>
+
+      <style>
+         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+         }
+
+         body {
+            font-family: "Space Grotesk";
+         }
+
+         .layout {
+            padding: 1rem;
+            display: grid;
+            grid-template-areas:
+               "header"
+               "right"
+               "main"
+               "menu"
+               "footer";
+            gap: 1rem;
+            background-color: #2196f3;
+            height: 100vh;
+         }
+
+         .header {
+            grid-area: header;
+         }
+         .main {
+            grid-area: main;
+         }
+
+         .footer {
+            grid-area: footer;
+         }
+
+         .right {
+            grid-area: right;
+         }
+
+         .menu {
+            grid-area: menu;
+         }
+
+         .box {
+            background-color: #ffffffcc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+         }
+
+         @media screen and (min-width: 786px) {
+            .layout {
+               grid-template-rows: 64px 1fr 1fr 10rem;
+               grid-template-columns: 20rem 1fr 18rem;
+               grid-template-areas:
+                  "header header header"
+                  "right menu menu"
+                  "main main main"
+                  "footer footer footer";
+            }
+         }
+
+         @media screen and (min-width: 1024px) {
+            .layout {
+               grid-template-rows: 64px 1fr 10rem;
+               grid-template-columns: 20rem 1fr 18rem;
+               grid-template-areas:
+                  "header header header"
+                  "right main menu"
+                  "footer footer footer";
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <section class="layout">
+         <header class="header box">Header</header>
+         <aside class="menu box">Menu</aside>
+         <main class="main box">Main</main>
+         <aside class="right box">Right</aside>
+         <footer class="footer box">Footer</footer>
+      </section>
+   </body>
+</html>
